@@ -1,0 +1,36 @@
+.logo-style {
+    height: 55px;    
+}
+
+.banner-style {
+    display: inline-flex;
+    width: 100%;
+    border-bottom: 1px outset whitesmoke;
+}
+
+.footer-style {
+    bottom: 0;
+    position: absolute;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px inset whitesmoke;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.width-200px {
+    width: 200px;
+}
+
+.image-styles {
+    width: 50%;
+    cursor: pointer;
+}
+
+.image-border-green {
+    border: 1px solid green;
+}
+
+.image-border-red {
+    border: 1px solid red;
+}
