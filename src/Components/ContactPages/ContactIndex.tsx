@@ -54,7 +54,9 @@ class ContactIndex extends React.Component<any, any> {
                             />
                         </div>
                         <div className="row py-2">
-                            <GeneralContacts />
+                            <GeneralContacts
+                                contacts={this.state.contactList.filter((u: any) => u.isFavorite == false)}
+                            />
                         </div>
                     </div>
                 </div>
