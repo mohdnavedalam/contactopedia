@@ -50,7 +50,7 @@ class ContactIndex extends React.Component<any, any> {
                         </div>
                         <div className="row py-2">
                             <FavoriteContacts
-                                contacts={this.state.contactList.filter((u: any) => u.isFavorite == true)}
+                                contacts={this.state.contactList.filter((u: any) => u.isFavorite == true)}  // sending contacts from state
                             />
                         </div>
                         <div className="row py-2">

@@ -4,6 +4,7 @@ const FavoriteContacts = (props: any) => {
     return (
         <div>
             {
+                // displaying contacts from state
                 props.contacts.map((contact: any, index: number) => (
                     <Contact contacts={contact} key={index} />
                 ))
