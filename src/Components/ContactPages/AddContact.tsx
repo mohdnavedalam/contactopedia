@@ -6,10 +6,10 @@ const AddContact = () => {
             </div>
             <div className="col-12 col-md-4 p-1">
                 <input className="form-control form-control-sm" placeholder="Name..."></input>
-            </div>            
+            </div>
             <div className="col-12 col-md-4 p-1">
                 <input className="form-control form-control-sm" placeholder="Email..."></input>
-            </div> 
+            </div>
             <div className="col-12 col-md-4 p-1">
                 <input className="form-control form-control-sm" placeholder="Phone..."></input>
             </div>
