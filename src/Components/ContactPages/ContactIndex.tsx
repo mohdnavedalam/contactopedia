@@ -38,15 +38,15 @@ class ContactIndex extends React.Component<any, any> {
     handleAddContact = (newContact: any) => {
         const newFinalContact = {
             ...newContact,
-            id: this.state.contactList[this.state.contactList.Length - 1].id + 1,
-            isFavorite: false,
+            id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+            isFavorite: false
         };
         this.setState((prevState: any) => {
             return {
-                contactList: prevState.ContactList.concat([newFinalContact]),
-            }
-        })
-    }
+                contactList: prevState.contactList.concat([newFinalContact])
+            };
+        });
+    };
 
     render() {
         return (
@@ -67,14 +67,14 @@ class ContactIndex extends React.Component<any, any> {
                         <div className="row py-2">
                             <div className="col-8 offset-2 row">
                                 <FavoriteContacts
-                                    contacts={this.state.contactList.filter((u: any) => u.isFavorite == true)}  // sending contacts from state
+                                    contacts={this.state.contactList.filter((u: any) => u.isFavorite === true)}  // sending contacts from state
                                 />
                             </div>
                         </div>
                         <div className="row py-2">
                             <div className="col-8 offset-2 row">
                                 <GeneralContacts
-                                    contacts={this.state.contactList.filter((u: any) => u.isFavorite == false)}
+                                    contacts={this.state.contactList.filter((u: any) => u.isFavorite === false)}
                                 />
                             </div>
                         </div>
