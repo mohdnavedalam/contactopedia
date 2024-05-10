@@ -13,12 +13,21 @@ class AddContact extends React.Component<any, any> {
         const name: string = e.target.elements.contactName.value.trim();
         const email: string = e.target.elements.contactEmail.value.trim();
         const phone: string = e.target.elements.contactPhone.value.trim();
-        this.props.handleAddContact({name: name, email: email, phone: phone});
+        const response = this.props.handleAddContact({ name: name, email: email, phone: phone });
+        if (response.status == "success") {
+            this.setState({ errorMessage: undefined, successMessage: response.msg });
+            (document.querySelector(".contact-form") as HTMLFormElement).reset();
+        } else {
+            this.setState({ errorMessage: response.msg, successMessage: undefined });
+        }
     };
     render() {
         return (
             <div className="border col-12 text-white p-2">
-                <form onSubmit={this.handleAddContactFormSubmit}>
+                <form
+                    onSubmit={this.handleAddContactFormSubmit}
+                    className="contact-form"
+                >
                     <div className="row p-2">
                         <div className="col-12 text-white-50">
                             Add a new Contact
