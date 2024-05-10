@@ -8,7 +8,7 @@ const FavoriteContacts = (props: any) => {
                 {
                     // displaying contacts from state
                     props.contacts.map((contact: any, index: number) => (
-                        <Contact contacts={contact} key={index} />
+                        <Contact contacts={contact} key={index} favoriteClick={props.favoriteClick} />
                     ))
                 }
             </div>

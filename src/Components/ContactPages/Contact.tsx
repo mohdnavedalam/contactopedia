@@ -26,6 +26,7 @@ const Contact = (props: any) => {
             <div className="col-2 col-md-2 pt-md-3">
                 <button
                     className={`btn btn-sm m-1 ${props.contacts.isFavorite ? "btn-warning" : "btn-outline-warning"}`}
+                    onClick={() => props.favoriteClick(props.contacts)}
                 >
                     <i
                         className="bi bi-star"
