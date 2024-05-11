@@ -2,7 +2,6 @@ import { getRandomUser } from "../../Utilities/api";
 
 const GetRandomContact = async (props: any) => {
     const responseFromApi = await getRandomUser();
-    console.log(responseFromApi);
     return props.handleAddRandomContact({
         name: responseFromApi.data.first_name + " " + responseFromApi.data.last_name,
         email: responseFromApi.data.email,
