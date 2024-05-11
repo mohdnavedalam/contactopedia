@@ -99,6 +99,14 @@ class ContactIndex extends React.Component<any, any> {
         });
     };
 
+    handleRemoveAll = () => {
+        this.setState(() => {
+            return {
+                contactList: [],
+            };
+        });
+    };
+
     render() {
         return (
             <div>
@@ -108,7 +116,7 @@ class ContactIndex extends React.Component<any, any> {
                             <AddRandomContact handleAddRandomContact={this.handleAddRandomContact} />
                         </div>
                         <div className="col-4 row">
-                            <RemoveAllContacts />
+                            <RemoveAllContacts handleRemoveAll={this.handleRemoveAll} />
                         </div>
                         <div className="row py-2">
                             <div className="col-8 offset-2 row">
