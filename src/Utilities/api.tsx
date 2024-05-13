@@ -6,7 +6,7 @@ const getRandomUser = async () => {
         {
             headers: {},
             params: {
-                //size: 1,
+                size: 1,
             }
         }
     );
