@@ -111,14 +111,31 @@ class ContactIndex extends React.Component<any, any> {
         });
     };
 
-    handleUpdateContact = (contact: any) => {
-        console.log(contact);
+    handleUpdateContact = (updatedContact: any) => {
+        console.log(updatedContact);
+        if (updatedContact.name == "") {
+            return { status: "failure", msg: "Please enter a valid name" }
+        } else if (updatedContact.phone == "") {
+            return { status: "failure", msg: "Please enter a valid phone number" }
+        }
         this.setState((prevState: any) => {
             return {
-                selectedContact: contact,
+                contactList: prevState.contactList.map((x: any) => {
+                    if (x.id == updatedContact.id) {
+                        return {
+                            ...x,
+                            name: updatedContact.name,
+                            phone: updatedContact.phone,
+                            email: updatedContact.email,
+                        };
+                    }
+                    return x;
+                }),
+                selectedContact: updatedContact,
                 isUpdating: true,
             };
         });
+        return {status: "success", msg: "Contacted updated successfully"};
     };
 
     handleCancelUpdate = (contact: any) => {

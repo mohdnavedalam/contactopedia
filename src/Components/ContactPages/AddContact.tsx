@@ -13,7 +13,12 @@ class AddContact extends React.Component<any, any> {
         const name: string = e.target.elements.contactName.value.trim();
         const email: string = e.target.elements.contactEmail.value.trim();
         const phone: string = e.target.elements.contactPhone.value.trim();
-        const response = this.props.handleAddContact({ name: name, email: email, phone: phone });
+        let response = undefined;
+        if (this.props.isUpdating) {
+            response = this.props.handleUpdateContact({ name: name, email: email, phone: phone });
+        } else {
+            response = this.props.handleAddContact({ name: name, email: email, phone: phone });
+        }
         if (response.status == "success") {
             this.setState({ errorMessage: undefined, successMessage: response.msg });
             (document.querySelector(".contact-form") as HTMLFormElement).reset();
@@ -87,7 +92,8 @@ class AddContact extends React.Component<any, any> {
                             {this.props.isUpdating && (
                                 <button
                                     className="btn btn-secondary form-control btn-sm"
-                                    onClick={() => this.props.handleCancelUpdate(this.props.selectedContact)}
+                                    //onClick={()=>this.handleCancel()}
+                                    onClick={this.handleCancel}
                                 >
                                     Cancel
                                 </button>
