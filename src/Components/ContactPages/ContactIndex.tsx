@@ -134,7 +134,10 @@ class ContactIndex extends React.Component<any, any> {
                         </div>
                         <div className="row py-2">
                             <div className="col-8 offset-2 row">
-                                <AddContact handleAddContact={this.handleAddContact} />
+                                <AddContact
+                                    handleAddContact={this.handleAddContact}
+                                    handleUpdateContact={this.handleUpdateContact}
+                                />
                             </div>
                         </div>
                         <div className="row py-2">
