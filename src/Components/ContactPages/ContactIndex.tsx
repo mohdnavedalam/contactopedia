@@ -54,6 +54,7 @@ class ContactIndex extends React.Component<any, any> {
             const newFinalContact = {
                 ...newContact,
                 id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+                //id: this.state.contactList.length == 0 ? 1 : this.state.contactList[this.state.contactList.length - 1].id,
                 isFavorite: false
             };
             this.setState((prevState: any) => {
@@ -92,6 +93,7 @@ class ContactIndex extends React.Component<any, any> {
         const newFinalContact = {
             ...newContact,
             id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+            //id: this.state.contactList.length == 0 ? 1 : this.state.contactList[this.state.contactList.length - 1].id,
             isFavorite: false,
         };
         this.setState((prevState: any) => {
